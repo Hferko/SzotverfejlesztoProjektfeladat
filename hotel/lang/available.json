@@ -1,0 +1,15 @@
+[
+  {
+    "id":"en",
+    "name":"english",
+    "local":"english",
+    "img":"./media/image/countries/gbr.png"
+  },
+  {
+    "id":"hu",
+	  "type":"east",
+    "name":"hungarian",
+    "local":"magyar",
+    "img":"./media/image/countries/hun.png"
+  }
+]

@@ -1,0 +1,44 @@
+[ 
+ {
+    "id": "service-01",
+    "img": "./media/image/services/jakuzzi.jpg",
+    "title": "serviceTitle01",
+    "text": "serviceDesc01",
+    "valid": true
+  },
+  {
+    "id": "service-02",
+    "img": "./media/image/services/bicajok.jpg",
+    "title": "serviceTitle02",
+    "text": "serviceDesc02",
+    "valid": true
+  },
+  {
+    "id": "service-03",
+    "img": "./media/image/services/kolokszoba.jpg",
+    "title": "serviceTitle03",
+    "text": "serviceDesc03",
+    "valid": true
+  },
+  {
+    "id": "service-04",
+    "img": "./media/image/services/fitness.jpg",
+    "title": "serviceTitle04",
+    "text": "serviceDesc04",
+    "valid": true
+  },
+  {
+    "id": "service-05",
+    "img": "./media/image/services/kenu.jpg",
+    "title": "serviceTitle05",
+    "text": "serviceDesc05",
+    "valid": true
+  },
+  {
+    "id": "service-06",
+    "img": "./media/image/services/parking.jpg",
+    "title": "serviceTitle06",
+    "text": "serviceDesc06",
+    "valid": true 
+  }
+]

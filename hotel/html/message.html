@@ -1,0 +1,50 @@
+<!-- Dialog -->
+<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+  
+  <!--Content-->
+  <div class="modal-content">
+
+    <!--Header-->
+    <div class="modal-header">
+
+      <!-- Title -->
+      <h4 id="messageLabel"
+          class="modal-title w-100">
+        <span class="me-1" 
+              ng-if="msg.icon">
+          <i ng-class="msg.icon"></i>
+        </span>
+        <span ng-if="msg.langId">{{lang.data[msg.langId] | capitalize}}</span>
+        <span ng-if="!msg.langId">{{msg.title | capitalize}}</span>
+      </h4>
+
+      <!-- Close button -->
+      <button type="button" 
+              class="btn-close" 
+              data-bs-dismiss="modal" 
+              aria-label="Close">
+      </button>
+    </div>
+
+    <!--Body-->
+    <div class="modal-body text-center">
+      <div  ng-class="item.ngClass"
+            ng-repeat="item in msg.content">
+        <span ng-if="item.langId">{{lang.data[item.langId]}}</span>
+        <span ng-if="!item.langId">{{item.text}}</span>
+      </div>
+    </div>
+
+    <!--Footer-->
+    <div class="modal-footer">
+      <button type="button"
+              class="btn px-3"
+              ng-class="item.ngClass"
+              ng-repeat="item in msg.btn"
+              data-bs-dismiss="modal">
+        <span ng-if="item.langId">{{lang.data[item.langId] | capitalize}}</span>
+        <span ng-if="!item.langId">{{item.text | capitalize}}</span>
+      </button>
+    </div>
+  </div>
+</div>

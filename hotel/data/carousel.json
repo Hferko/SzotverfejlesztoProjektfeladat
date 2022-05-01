@@ -1,0 +1,20 @@
+[
+  {
+    "label" : null,
+    "img"   : "./media/image/carousel/slide1.jpg",
+    "title" : null,
+    "text"  : null
+  },
+  {
+    "label" : null,
+    "img"   : "./media/image/carousel/slide2.jpg",
+    "title" : "offers",
+    "text"  : "bookHere"
+  },
+  {
+    "label" : null,
+    "img"   : "./media/image/carousel/slide3.jpg",
+    "title" : null,
+    "text"  : null
+  }
+]

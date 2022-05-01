@@ -1,0 +1,65 @@
+<div id="page-container"
+     class="d-conditional" 
+     ng-change-state="">
+
+  <!-- Main -->
+  <main class="position-absolute w-100">
+
+     <!-- Carosel image -->
+     <div id="section-00" 
+        class="row" 
+        ng-include="'./html/carousel.html'">
+     </div>
+
+    <!-- Container -->
+    <div class="container text-center">    
+     
+      <!-- Sections -->
+      <div id="section-{{$index | numPad}}" 
+           class="row mt-5"
+           ng-if="key!='carousel'"
+           ng-repeat="(key, group) in data">
+        
+        <h1 class="display-6">{{lang.data[key] | capitalize}}</h1>
+        <h4>{{lang.data["special"] | capitalize}}</h4>
+        <p>{{lang.data["bookHere"] | capitalize}}</p>
+      
+        <div class="redirect">
+          <a ui-sref="gallery">
+          {{lang.data["roomGallery"] | capitalize}}</a>
+        </div>
+        
+        <hr class="mt-5">
+        <ul class="d-block clearfix pt-3 ms-0">
+          <li id="{{item.id}}"
+              class="card d-inline-block me-3 mb-3"
+              ng-repeat="item in group"
+              style="width:400px;float:left;"
+              ng-style="{'height':(key=='services') ? '400px':'470px'}"
+              ng-if="item.valid">
+            <img ng-src="{{item.img}}" class="card-img-top" alt="img">
+            <div class="card-body">
+              <h5 class="card-title text-center">
+                {{lang.data[item.title] | capitalize}}
+              </h5>
+              <p class="card-text text-start">{{lang.data[item.text]}}</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="availability"
+            class="container-fluid text-muted mt-5 pt-4" 
+            ng-include="'./html/footer.html'">
+    </footer>
+  </main>
+
+  <!-- Header -->
+  <header class="text-center position-fixed w-100 top-0">
+    <div class="container-fluid" 
+         ng-include src="'./html/navigate.html'">
+    </div>
+  </header>
+</div>

@@ -1,0 +1,93 @@
+<div id="page-container" 
+     class="d-conditional" 
+     ng-change-state="">
+
+  <!-- Main -->
+  <main class="position-absolute w-100">
+
+    <!-- Carosel image -->
+    <div  id="carosel-image" 
+          class="row" 
+          ng-include="'./html/carousel.html'">
+     </div>
+    
+    <!-- Container -->
+    <div class="container my-5 text-center">
+
+      <!-- Navigate buttons-->
+      <div class="row mt-5 text-start">
+
+        <!-- Title -->
+        <h3>{{lang.data["places"]}}</h3>
+
+        <!-- Buttons -->
+        <ul id="pills-tab" 
+            class="nav nav-pills mb-3 ps-0" 
+            role="tablist">
+
+          <!-- Button -->
+          <li class="nav-item ms-1 mb-1" 
+              role="presentation"
+              ng-repeat="(key, value) in data"
+              ng-if="key!='carousel'">
+            <button id="pills-{{key}}-tab" 
+                    class="nav-link" 
+                    ng-class="{'active': $first}" 
+                    data-bs-toggle="pill"
+                    data-bs-target="#pills-{{key}}" 
+                    type="button" 
+                    role="tab" 
+                    aria-controls="pills-{{key}}"
+                    aria-selected="{{$first ? 'true' : 'false'}}"
+                    style="min-width:170px">
+              {{lang.data[key] |capitalize}}
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Gallery -->
+      <div class="row mt-3">
+        <div class="tab-content w-100">
+
+          <!-- Tab panel -->
+          <ul id="pills-{{key}}" 
+              class="tab-pane fade ps-0" 
+              ng-class="{'show active': $first}" 
+              role="tabpanel"
+              aria-labelledby="pills-{{key}}-tab" 
+              ng-repeat="(key, value) in data"
+              ng-if="key!='carousel'">
+            <hr>
+            <h1 class="display-6 mb-5">
+              {{lang.data[key] |capitalize}}
+            </h1>
+            <li id="{{item.id}}" 
+                class="d-inline-block bg-img bg-image-cover me-3 mb-3" 
+                ng-repeat="item in value"
+                style="width:400px;height:266px;" 
+                ng-if="item.valid"
+                ng-click="methods.showDialog($event)"
+                data-room="{{item | roomProp}}"
+                ng-style="{'background-image':'url('+item.img+')'}">
+            </li>
+          </ul>
+        </div>
+        <hr>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="availability" 
+            class="container-fluid text-muted mt-5 pt-4" 
+            ng-include="'./html/footer.html'">
+    </footer>
+  </main>
+
+  <!-- Header -->
+  <header class="text-center position-fixed w-100 top-0">
+    <div class="container-fluid" 
+         ng-include src="'./html/navigate.html'">
+    </div>
+  </header>
+</div>

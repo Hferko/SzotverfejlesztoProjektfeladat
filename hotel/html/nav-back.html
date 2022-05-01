@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand fixed-top py-0 bg-transparent-05">
+  
+  <!-- Container -->
+  <div class="container-fluid">
+    
+    <!-- Navigate items -->
+    <ul class="navbar-nav mb-0 w-100">
+
+      <!-- Back -->
+      <li class="nav-item me-auto ms-1">
+        <a class="nav-link" 
+           aria-current="page"
+           href="{{state.prev ? state.prev : 'home'}}" 
+           ui-sref="{{state.prev ? state.prev : 'home'}}">
+          <img class="me-1" 
+               height="32" 
+               alt="back"
+               src="./media/image/icons/arrow-left.png">
+          <span class="text-white">{{lang.data.back | capitalize}}</span>
+        </a>
+      </li>
+
+      <!-- Language -->
+      <li class="nav-item ms-auto me-3"
+          ng-include src="'./html/language.html'">
+      </li>
+    </ul>
+  </div>
+</nav>

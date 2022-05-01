@@ -1,0 +1,79 @@
+
+
+<!-- Dialog -->
+<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+style="max-width:600px;">
+
+  <!-- Content -->
+  <div class="modal-content">
+
+    <!-- Header -->
+    <div class="modal-header py-1">
+
+      <!-- Title-->
+      <h4 id="dialoglLabel"
+          class="modal-title w-100">
+        <span ng-if="room.id">{{room.id}}.&nbsp;</span>
+        <span>{{lang.data[room.title] |capitalize}}</span>
+      </h4>
+
+      <!-- Close button -->
+      <button type="button" 
+              class="btn-close" 
+              data-bs-dismiss="modal" 
+              aria-label="Close">
+      </button>
+    </div>
+
+    <!-- Body -->
+    <div class="modal-body py-1">
+      <figure class="text-center mb-1">
+        <img  ng-src="{{room.img}}"
+              alt="room" 
+              style="width:95%;height:auto;">
+      </figure>
+      <ul class="mb-1">
+        <li ng-repeat="(k,v) in room" 
+            ng-if="['id','title','img','valid','description'].indexOf(k)===-1">
+          <span>{{lang.data[k] | capitalize}}:&nbsp;</span>
+          <span>{{lang.data[v] | capitalize}}</span>
+        </li>
+      </ul>
+
+      <!-- Description -->
+      <hr ng-if="room.description" class="my-2">
+      <h5 ng-if="room.description">
+        {{lang.data.description | capitalize}}:
+      </h5>
+      <p class="mb-2">
+        {{lang.data[room.description]}}
+      </p>
+    </div>
+
+    <!-- Footer -->
+    <div class="modal-footer" ng-switch="state.id">
+      <button type="button"
+              class="btn btn-primary px-3" 
+              ng-switch-when="gallery"
+              data-bs-dismiss="modal">
+        {{lang.data["ok"]}}
+      </button>
+      <button type="button" 
+              class="btn btn-secondary px-3" 
+              ng-switch-when="reservation"
+              data-bs-dismiss="modal">
+        {{lang.data["cancel"]}}
+      </button>
+      <a ui-sref="reservation">
+        <button type="button"
+                class="btn btn-primary px-3"
+                ng-switch-when="reservation"
+                data-room-id="{{room.id}}"
+                ng-click="methods.booking($event)"
+                data-bs-dismiss="modal">
+          {{lang.data["booking"]}}
+        </button>
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+[
+  {
+    "id": "inform-00",
+    "img": "./media/image/information/marospart.jpg",
+    "title": null,
+    "text": "marospart",
+    "valid": true
+  },
+  {
+    "id": "inform-01",
+    "img": "./media/image/information/hagymahaz.jpg",
+    "title": null,
+    "text": "fitt",
+    "valid": true
+  },
+  {
+    "id": "inform-02",
+    "img": "./media/image/information/wellness.jpg",
+    "title": null,
+    "text": "wellness",
+    "valid": true
+  }
+]

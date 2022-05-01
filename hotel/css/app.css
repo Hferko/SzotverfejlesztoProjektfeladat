@@ -1,0 +1,274 @@
+/* Reset */
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  background-color: beige;
+}
+
+/* Body top shadow */
+body::before {
+  content: "";
+  position: fixed;
+  left: 0;
+  top: -2px;
+  width: 100vw;
+  height: 2px;
+  -webkit-box-shadow: 0 0 2px rgba(0,0,0,.8);
+          box-shadow: 0 0 2px rgba(0,0,0,.8);
+}
+
+/* Box sizing */
+*, 
+*:before, 
+*:after {
+	-webkit-box-sizing:border-box;
+		 -moz-box-sizing:border-box;
+					box-sizing:border-box;
+}
+
+/* Clear fix */
+.clearfix:before,
+.clearfix:after {
+  content: '';
+  display: block;
+}
+.clearfix:after {
+  clear: both;
+  overflow: hidden;
+}
+
+/* User select */
+*:not(input):not(textarea) {
+	  -webkit-user-select: none !important;
+	   -khtml-user-select: none !important;
+			 -moz-user-select: none !important;
+				-ms-user-select: none !important;
+						user-select: none !important;
+					outline-style: none !important;
+}
+
+/* Background image */
+.bg-img {
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+}
+
+/* Background image contain */
+.bg-img-contain {
+  -webkit-background-size: contain !important;
+          background-size: contain !important;
+}
+
+/* Background image cover */
+.bg-image-cover {
+  -webkit-background-size: cover !important;
+          background-size: cover !important;
+}
+
+/* Background transparent 0.05 */
+.bg-transparent-05 {
+  background-color: rgba(0,0,0,0.05) !important;
+}
+
+/* Hotel background */
+.bg-hotel {
+  background-image:url('../media/image/wallpaper/hotel.jpg');
+  overflow-y:auto;
+}
+
+/* Application background */
+.bg-beige {
+  background-color: beige !important;
+}
+
+/* Scroll smooth */
+.scroll-smooth {
+  scroll-behavior: smooth !important;
+}
+
+/* Display coditional */
+.d-conditional:not(.show) {
+  display: none !important;
+}
+
+/* Curso pointer */
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+/* Main */
+main {
+  top: 60px;
+}
+
+/* Logo */
+#logo {
+  text-align: center;  
+}
+#logo img {
+  width: 15%;
+  height: auto;
+}
+
+/* Modal */
+.modal-backdrop {
+  z-index: -1 !important;
+}
+
+/* -- The bootstrap nav -- */
+.nav-common .nav-item {
+  background: maroon;
+  font-size: 16px;
+  border: 1px solid #330000;
+  border-radius: 5px;   
+}
+
+.navbar .nav-item .nav-link {
+  color: white;
+  text-transform: uppercase;
+  z-index: 1 !important;   
+}
+
+/* Submenu */
+#pills-tab .nav-item{
+  background: peru;
+  border: 1px solid peru;
+  border-radius: 5px;  
+  color: white;
+}
+
+#pills-tab .nav-item a,
+#pills-tab button
+{
+  color: white;
+}
+
+#pills-tab .nav-item a:hover,
+#pills-tab button:hover {
+  background: #8B4513;
+  border-radius: 5px;
+  transition: background-color .5s ease-in-out;
+  color: lime;
+}
+
+@media screen and (max-width: 480px) {
+  .tab-content{
+    width: 50%;
+  } 
+}
+
+/* Input */
+.input-clear-icon {
+  position: absolute;
+  display: inline-block;
+  width: 1.1rem;
+  top: 0.5rem;
+  right: 0.25rem;
+  z-index: 100;
+  pointer-events: auto;
+  cursor: pointer;
+  color: #6495ED;
+}
+.min-w-20 {
+  min-width: 20rem !important;
+}
+.input-clear-icon.input-code {
+  left: 9rem;
+}
+input.input-password:not(.show) {
+  -webkit-text-security: disc !important;
+}
+
+/* -- Home page's cards  */
+.card {
+  overflow: hidden;
+  border: 1px solid tan;
+  border-radius: 8px;
+  padding: 10px;
+  height: 100%;
+  background-color: white;
+}
+
+.card img {
+  transition: all 0.25s linear;
+  transition-delay: 1s;
+}
+
+.card:hover img {
+  transform: rotate(1deg) scale(1.1, 1.1);
+  filter: brightness(110%);
+}
+
+/* The floating link here comes*/
+div .offers {
+  text-align: center;
+}
+
+.redirect {
+  width: 50%;
+  margin: 20px auto;
+  padding: 6px;
+  position: relative;
+  background-color: maroon;
+  animation-name: uszik;
+  animation-duration: 3s;
+  line-height: 1.8;
+  border-radius: 8px;  
+  text-align: center;
+}
+
+.redirect a{
+  color: white;
+  text-decoration: none;  
+}
+.redirect a:hover{
+  color: aqua;
+  text-decoration: none;
+}
+
+.redirect:hover {
+  background: brown;
+  border-radius: 5px;
+  transition: background-color .5s ease-in-out;  
+  color: aqua;
+}
+
+@keyframes uszik {
+  0% {
+    top: 10vh;
+    left: 100vw;
+    background: brown;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    background: rgba(128, 0, 0, 0.8);
+  }
+}
+/*-- End of floating link --*/
+
+
+/* FOOTER */
+footer {
+  background-image:-moz-linear-gradient(to right,#A0A0A0,#787878,#787878,#787878,#A0A0A0);
+	background-image:     linear-gradient(to right,#A0A0A0,#787878,#787878,#787878,#A0A0A0);
+  -webkit-box-shadow: 0px -2px 3px rgba(125, 125, 125, 0.8);
+          box-shadow: 0px -2px 3px rgba(125, 125, 125, 0.8);
+}
+footer .logo {
+  width: 74px;
+  height: 80px;
+  background-image: url(../media/image/logo/keri.webp);
+}
+footer i {
+  width: 16px !important;
+}
+.text-muted-light {
+  color: #e6e3e3 !important;
+}
+.fs-075 {
+  font-size:0.75rem  !important;
+}

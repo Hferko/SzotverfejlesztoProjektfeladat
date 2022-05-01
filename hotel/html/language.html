@@ -1,0 +1,33 @@
+<div class="btn-group navbar-nav"
+     ng-if="lang.available && lang.available.length>1">
+  <a href="#" 
+     data-bs-toggle="dropdown"
+     class="dropdown-toggle text-decoration-none nav-link">
+    <img ng-src="{{lang.available[lang.index].img}}"
+         class="me-1" 
+         height="24" 
+         alt="flag">
+    <span>
+      {{lang.available[lang.index].local | capitalize}}
+    </span>
+  </a>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li data-item-id="{{x.id}}"
+        class="dropdown-item cursor-pointer"
+        ng-click="methods.changeLanguage($event)"
+        ng-repeat="x in lang.available" 
+        ng-if="x.valid && $index != lang.index">
+      <img ng-src="{{x.img}}" 
+           alt="flag" 
+           class="me-1" 
+           height="24">
+      <span>
+        {{x.name | capitalize}}
+      </span>
+      <span class="mb-1" 
+            ng-if="x.name != x.local">
+        ({{x.local}})
+      </span>
+    </li>
+  </ul>
+</div>

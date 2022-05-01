@@ -1,0 +1,47 @@
+
+<!-- Carousel image -->
+<div id="carouselIndicators"
+     class="carousel slide" 
+     data-bs-ride="carousel"
+     style="z-index: 0">
+          
+  <!-- Indicators -->
+  <div class="carousel-indicators">
+    <button type="button" 
+            data-bs-target="#carouselIndicators" 
+            data-bs-slide-to="{{$index}}"
+            ng-class="{'active': $first}"
+            aria-current="{{$first ? 'true' : ''}}" 
+            aria-label="{{item.label}}"
+            ng-repeat="item in data.carousel">            
+    </button>
+  </div>
+
+  <!-- Images -->
+  <div class="carousel-inner">
+    <div class="carousel-item"
+         ng-class="{'active': $first}"
+         ng-repeat="item in data.carousel">
+      <img ng-src="{{item.img}}" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block"
+           ng-if="item.title || item.text">
+        <h4 ng-if="item.title">{{lang.data[item.title] |capitalize}}</h4>
+        <p ng-if="item.text">{{lang.data[item.text]}}</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Buttons -->
+  <button class="carousel-control-{{item}}" 
+          type="button" 
+          data-bs-target="#carouselIndicators" 
+          data-bs-slide="{{item}}"
+          ng-repeat="item in ['prev','next']">
+    <span class="carousel-control-{{item}}-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">{{lang.data[item]}}</span>
+  </button>
+</div>
+
+<div id="logo">
+  <img src="./media/image/logo/logo.jpg" alt="">
+</div>

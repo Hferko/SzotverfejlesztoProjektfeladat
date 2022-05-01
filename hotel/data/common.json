@@ -1,0 +1,92 @@
+[
+  {
+    "title": "aisle",
+    "img": "./media/image/common/aisle.jpg",
+    "valid": true,
+    "description": null
+  },
+  {
+    "title": "canteen",
+    "img": "./media/image/common/canteen.jpg",
+    "valid": true,
+    "description": "description8"
+  },
+  {
+    "title": "club",
+    "img": "./media/image/common/club.jpg",
+    "valid": true,
+    "description": "description9"
+  },
+  {
+    "title": "dining",
+    "img": "./media/image/common/dining.jpg",
+    "valid": true,
+    "description": "description8"
+  },
+  {
+    "title": "fitness",
+    "img": "./media/image/common/fitness.jpg",
+    "valid": true,
+    "description": "description10"
+  },
+  {
+    "title": "hall",
+    "img": "./media/image/common/hall.jpg",
+    "valid": true,
+    "description": "description11"
+  },
+  {
+    "title": "kidsRoom",
+    "img": "./media/image/common/kids.jpg",
+    "valid": true,
+    "description": "description12"
+  },
+  {
+    "title": "maros_beach",
+    "img": "./media/image/common/maros_beach.jpg",
+    "valid": true,
+    "description": "description13"
+  },
+  {
+    "title": "reception",
+    "img": "./media/image/common/reception.jpg",
+    "valid": true,
+    "description": "description14"
+  },
+  {
+    "title": "sauna",
+    "img": "./media/image/common/sauna.jpg",
+    "valid": true,
+    "description": "description15"
+  },
+  {
+    "title": "restaurant",
+    "img": "./media/image/common/table.jpg",
+    "valid": true,
+    "description": "description16"
+  },
+  {
+    "title": "bar",
+    "img": "./media/image/common/bar.jpg",
+    "valid": true,
+    "description": "description17"
+  },
+  {
+    "title": "lobby",
+    "img": "./media/image/common/lobby.jpg",
+    "valid": true,
+    "description": "description18"
+  },
+  {
+    "title": "pool",
+    "img": "./media/image/common/medence.jpg",
+    "valid": true,
+    "description": "description19"
+  },
+  {
+    "title": "lounge",
+    "img": "./media/image/common/lounge.jpg",
+    "valid": true,
+    "description": "description20"
+  }
+]

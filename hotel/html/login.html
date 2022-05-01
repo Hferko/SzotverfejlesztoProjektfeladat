@@ -1,0 +1,190 @@
+<div id="page-container"
+     class="d-conditional bg-img bg-image-cover bg-hotel position-fixed top-0 w-100 h-100"
+     ng-change-state="">
+  
+  <!-- Login container -->
+  <div id="login-container"
+       class="d-flex align-items-center justify-content-center vh-100">
+    
+    <!-- Panel -->
+    <div class="py-4 px-5 bg-beige">
+
+      <!-- Login form -->
+      <form id="login-form" 
+            class="w-25 min-w-20"       
+            action="#">
+
+        <!-- Logo -->
+        <div id="logo">
+          <img src="./media/image/logo/logo.jpg" 
+               class="w-50" 
+               alt="logo">
+        </div>
+
+        <!-- Title-->
+        <h3 class="my-3 w-100 text-center">
+          <span><i class="fas fa-users"></i></span>
+          <span>{{lang.data.login | capitalize}}</span>
+        </h3>
+
+        <!-- User -->
+        <div id="user-user" 
+             class="input-group input-row mb-3">
+
+          <!-- Icon -->
+          <div class="input-group-prepend">
+            <span class="input-group-text h-100">
+              <i class="fas fa-user"></i>
+            </span>
+          </div>
+
+          <!-- Input user -->
+          <input id="user" 
+                 type="text" 
+                 class="form-control pe-4" 
+                 ng-model="model.user" 
+                 ng-change="methods.changed()" 
+                 spellcheck="false" 
+                 autocomplete="off" 
+                 ng-trim="false" 
+                 placeholder="{{lang.data.user}}" 
+                 required
+                 maxlength="20">
+
+          <!-- Input clera icon -->
+          <span class="input-clear-icon d-conditional buttonClickEffect cursor-pointer">
+            <i class="fas fa-times-circle"></i>
+          </span>
+        </div>
+
+        <!-- Password -->
+        <fieldset>
+
+          <!-- Password -->
+          <div id="user-password" 
+               class="input-group input-row mb-2">
+          
+            <!-- Icon -->
+            <div class="input-group-prepend">
+                <span class="input-group-text h-100">
+                  <i class="fas fa-key"></i>
+                </span>
+            </div>
+          
+            <!-- Input password -->
+            <input id="password" 
+                   type="text" 
+                   class="form-control pe-4 input-password" 
+                   ng-model="model.password" 
+                   ng-change="methods.changed()"
+                   spellcheck="false" 
+                   autocomplete="off" 
+                   ng-trim="false"
+                   placeholder="{{lang.data.password}}" 
+                   required
+                   maxlength="20">
+          
+            <!-- Input clera icon -->
+            <span class="input-clear-icon d-conditional buttonClickEffect cursor-pointer">
+              <i class="fas fa-times-circle"></i>
+            </span>
+          </div>
+        
+          <!-- Show/Hide password -->
+          <div class="row mb-3">
+            <div class="col">
+              <div class="form-check">
+                <input id="display-password" 
+                       class="form-check-input" 
+                       type="checkbox" 
+                       value=""
+                       ng-model="isChecked" 
+                       ng-change="methods.show(isChecked)">
+                <label class="form-check-label" 
+                       for="display-password">
+                  {{lang.data.displayPassword | capitalize}}
+                </label>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Test code -->
+        <h3 class="mb-2" 
+          style="letter-spacing: 2px;">
+        {{testCode}}
+        </h3>
+        <div id="user-code" 
+             class="input-group input-row mb-3">
+
+          <!-- Icon -->
+          <div class="input-group-prepend">
+            <span class="input-group-text h-100">
+              <i class="fas fa-robot"></i>
+            </span>
+          </div>
+
+          <!-- Input test code -->
+          <input id="code" 
+                 type="text" 
+                 class="form-control" 
+                 ng-model="model.code" 
+                 ng-change="methods.changed()"
+                 spellcheck="false" 
+                 autocomplete="off" 
+                 ng-trim="false"
+                 placeholder="{{lang.data.code}}" 
+                 required
+                 maxlength="5" 
+                 style="max-width:7.5rem !important">
+
+          <!-- Input clera icon -->
+          <span class="input-clear-icon input-code d-conditional buttonClickEffect cursor-pointer">
+              <i class="fas fa-times-circle"></i>
+          </span>
+
+          <!-- Refresh button -->
+          <div class="input-group-append">
+              <span id="refresh-code" 
+                    class="input-group-text buttonClickEffect cursor-pointer" 
+                    ng-click="methods.refresh()">
+                <i class="fas fa-sync-alt me-2"></i>
+	    		      <span class="content">
+                  {{lang.data.refresh | capitalize}}
+                </span>
+              </span>
+          </div>
+        </div>
+
+        <!-- Buttons -->
+        <div id="button-container" 
+             class="btn-group mt-4 text-center w-100">
+
+          <!-- Login button -->
+          <button id="accept" 
+                  type="button" 
+                  ng-click="methods.check()"
+                  class="btn btn-secondary mx-2 button-shadow buttonClickEffect" 
+                  disabled>
+            {{lang.data.login | capitalize}}
+          </button>
+
+          <!-- Cancel button -->
+          <button id="cancel" 
+                  type="button" 
+                  ng-click="methods.prevState()"
+                  class="btn btn-primary mx-2 button-shadow buttonClickEffect">
+            {{lang.data.cancel | capitalize}}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="text-center position-fixed w-100 top-0">
+    <div class="container-fluid" 
+         ng-include src="'./html/nav-back.html'">
+    </div>
+  </header>
+</div>

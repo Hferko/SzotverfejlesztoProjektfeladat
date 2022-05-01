@@ -1,0 +1,162 @@
+<div id="page-container"
+     class="d-conditional" 
+     ng-change-state="">
+
+  <!-- Main -->
+  <main class="position-absolute w-100">
+
+    <!-- Carosel image -->
+    <div  id="carousel" 
+          class="row" 
+          ng-include="'./html/carousel.html'">
+    </div>
+
+    <!-- Container -->
+    <div class="container mt-5">
+
+      <!-- Reservation -->
+      <div class="row justify-content-center">
+
+        <!-- Reservation form -->
+        <form id="reservation-form" 
+              class="bg-transparent-05 p-3">
+
+          <!-- Title -->
+          <h4>
+            <span><i class="fas fa-suitcase-rolling"></i></span>
+            <span class="ms-2">{{lang.data.reservation | capitalize}}</span>
+            <span>:</span>
+          </h4>
+
+          <!-- Reservation -->
+          <div class="form-group mt-3">
+
+            <!-- Row -->
+            <div class="row">
+
+              <!-- Date arrival -->
+              <div class="input-item col-12 col-sm-6 col-lg-3 mb-2">
+                <span class="text-danger fw-bold">*</span>
+                <label for="arrival" 
+                       class="vol-form-label">
+                  <span>{{lang.data.arrival | capitalize}}</span>
+                  <span>:</span>
+                </label>
+                <input type="date" 
+                       class="form-control min-w-10" 
+                       id="arrival"
+                       ng-model="reservation.arrival"
+                       ng-change="methods.changed()"
+                       required>
+              </div>
+
+              <!-- Date leaving -->
+              <div class="input-item col-12 col-sm-6 col-lg-3 mb-2">
+                <span class="text-danger fw-bold">*</span>
+                <label for="leaving" 
+                       class="vol-form-label">
+                  <span>{{lang.data.leaving | capitalize}}</span>
+                  <span>:</span>
+                </label>
+                <input type="date" 
+                       class="form-control min-w-10" 
+                       id="leaving"
+                       ng-model="reservation.leaving"
+                       ng-change="methods.changed()" 
+                       required>
+              </div>
+
+              <!-- Number of adults -->
+              <div class="input-item col-12 col-sm-6 col-lg-3 mb-2">
+                <span class="text-danger fw-bold">*</span>
+                <label for="adults" 
+                       class="vol-form-label">
+                  <span>{{lang.data.adults | capitalize}}</span>
+                  <span>:</span>
+                </label>
+                <input type="number" 
+                       class="form-control min-w-10" 
+                       id="adults"
+                       ng-model="reservation.adults"
+                       ng-change="methods.changed()" 
+                       min="1"
+                       required>
+              </div>
+
+              <!-- Number of children -->
+              <div class="input-item col-12 col-sm-6 col-lg-3 mb-2">
+                <label for="children" 
+                       class="vol-form-label">
+                  <span>{{lang.data.children | capitalize}}</span>
+                  <span>:</span>
+                </label>
+                <input type="number" 
+                       class="form-control min-w-10" 
+                       id="children"
+                       ng-model="reservation.children"
+                       ng-change="methods.changed()"
+                       min="0">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- Row -->
+      <div class="row mt-5">
+        
+        <!-- Information -->
+        <h6 class="text-center">{{lang.data["bookHere"] | capitalize}}</h6>
+        <p class="text-center mt-3 display-6">
+          {{lang.data["ourFreeRooms"] | capitalize}}:
+        </p>
+
+        <!-- Empty -->
+        <h4 class="mt-3 w-100 text-center" 
+            ng-if="!data.rooms.length">
+          {{lang.data.freeRoomEmpty}}
+        </h4>
+
+
+        <!-- Rooms -->
+        <ul class="ps-0 text-center">
+
+          <!-- Room -->
+          <li id="{{item.id}}" 
+              class="d-inline-block me-3 mb-3 position-relative" 
+              ng-repeat="item in data.rooms"
+              style="width:400px;height:314px;" 
+              ng-click="methods.showDialog($event)"
+              data-room="{{item | roomProp}}">
+
+            <!-- Image -->
+            <div class="bg-img bg-image-cover"
+                 style="width:400px;height:266px;"
+                 ng-style="{'background-image':'url('+item.img+')'}">
+            </div>
+
+            <!-- Content -->
+            <p class="position-absolute bottom-0 w-100">
+              <span>{{item.id}}</span>
+              <span>.&nbsp;</span>
+              <span>{{lang.data[item.title]}}</span>
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="availability" 
+            class="container-fluid text-muted mt-5 pt-4" 
+            ng-include="'./html/footer.html'">
+    </footer>
+  </main>
+
+  <!-- Header -->
+  <header class="text-center position-fixed w-100 top-0">
+    <div class="container-fluid" 
+         ng-include src="'./html/navigate.html'">
+    </div>
+  </header>
+</div>
